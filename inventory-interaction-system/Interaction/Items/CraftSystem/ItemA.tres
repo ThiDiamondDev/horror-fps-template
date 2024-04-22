@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=11 format=3 uid="uid://c371lrjw81eam"]
+
+[ext_resource type="Script" path="res://inventory-interaction-system/Inventory/ItemResource.gd" id="1_1emwd"]
+[ext_resource type="Resource" uid="uid://hhvvwej73ism" path="res://inventory-interaction-system/Interaction/Items/CraftSystem/Craftable/ItemABC.tres" id="1_f8hnj"]
+[ext_resource type="Texture2D" uid="uid://cojbb4egfcic8" path="res://inventory-interaction-system/Inventory/Images/B_LETTER.png" id="2_xscms"]
+[ext_resource type="Script" path="res://inventory-interaction-system/Inventory/CraftItemResource.gd" id="4_yb2xm"]
+[ext_resource type="Texture2D" uid="uid://bs5aomv6nuciu" path="res://inventory-interaction-system/Inventory/Images/AB.png" id="6_cgob4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ika48"]
+load_path = "res://.godot/imported/A_LETTER.png-7f5e088c7deb1b5380da8f5f03c9de5e.ctex"
+
+[sub_resource type="Resource" id="Resource_lt782"]
+script = ExtResource("1_1emwd")
+item_name = "ItemA"
+texture = SubResource("CompressedTexture2D_ika48")
+quantity = 1
+crafted_items = Array[ExtResource("4_yb2xm")]([])
+description = ""
+
+[sub_resource type="Resource" id="Resource_v01go"]
+script = ExtResource("1_1emwd")
+item_name = "ItemB"
+texture = ExtResource("2_xscms")
+quantity = 1
+crafted_items = Array[ExtResource("4_yb2xm")]([])
+description = ""
+
+[sub_resource type="Resource" id="Resource_hhaew"]
+script = ExtResource("4_yb2xm")
+itemsNeeded = Array[ExtResource("1_1emwd")]([SubResource("Resource_lt782"), SubResource("Resource_v01go")])
+item_name = "ItemAB"
+texture = ExtResource("6_cgob4")
+quantity = 1
+crafted_items = Array[ExtResource("4_yb2xm")]([])
+description = ""
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xxcr1"]
+load_path = "res://.godot/imported/A_LETTER.png-7f5e088c7deb1b5380da8f5f03c9de5e.ctex"
+
+[resource]
+script = ExtResource("1_1emwd")
+item_name = "ItemA"
+texture = SubResource("CompressedTexture2D_xxcr1")
+quantity = 1
+crafted_items = Array[ExtResource("4_yb2xm")]([ExtResource("1_f8hnj"), SubResource("Resource_hhaew")])
+description = ""

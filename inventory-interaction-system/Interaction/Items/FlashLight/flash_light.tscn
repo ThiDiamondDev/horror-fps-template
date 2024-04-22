@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ls7715xqknl"]
+
+[ext_resource type="PackedScene" uid="uid://bip0t11lxgv8w" path="res://inventory-interaction-system/Interaction/Items/FlashLight/FlashLight.blend" id="1_d3b12"]
+[ext_resource type="Script" path="res://inventory-interaction-system/Interaction/Items/FlashLight/flash_light.gd" id="2_7bt4i"]
+
+[sub_resource type="Animation" id="Animation_ahpih"]
+resource_name = "Decrease Energy"
+length = 20.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpotLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.98891, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 20)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpotLight3D:spot_angle")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(45, -0.25, 0, 0.25, 0, 30, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 20)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0gfxp"]
+_data = {
+"Decrease Energy": SubResource("Animation_ahpih")
+}
+
+[node name="FlashLight" instance=ExtResource("1_d3b12")]
+script = ExtResource("2_7bt4i")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.167411, 0)
+light_energy = 1.98891
+spot_range = 15.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_0gfxp")
+}

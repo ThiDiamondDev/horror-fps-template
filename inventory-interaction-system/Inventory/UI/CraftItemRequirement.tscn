@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg2sroo3c7ku7"]
+
+[ext_resource type="Script" path="res://inventory-interaction-system/Inventory/UI/CraftItemRequirement.gd" id="1_smhdq"]
+
+[node name="ReqContainer" type="MarginContainer"]
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_smhdq")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "1/1 item AALAMAEDDA DSDDSD"
+autowrap_mode = 2

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://igad63lnj4n5"]
+
+[ext_resource type="Script" path="res://inventory-interaction-system/Interaction/Items/CollectibleItem.gd" id="1_rt48h"]
+
+[node name="CollectibleItem" type="StaticBody3D"]
+collision_layer = 8
+script = ExtResource("1_rt48h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]

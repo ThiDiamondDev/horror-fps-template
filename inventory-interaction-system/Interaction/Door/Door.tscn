@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjjitfxn14vk8"]
+
+[ext_resource type="PackedScene" uid="uid://8w3abm5qyqxl" path="res://inventory-interaction-system/Interaction/DragInteraction.tscn" id="1_u2wj4"]
+[ext_resource type="ArrayMesh" uid="uid://cseyouwbybyhi" path="res://inventory-interaction-system/Interaction/Door/door.res" id="2_2m521"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nf2m2"]
+points = PackedVector3Array(0.102385, 0.741756, 0.66025, 0.0582336, -0.00859904, -0.00195351, -0.0521373, -0.00859904, 0.638054, 0.0582336, 1.4039, -0.00195351, -0.0521373, 1.4039, 0.638054, -0.0521373, -0.00859904, -0.00195351, -0.0521373, 1.33767, -0.0240108, 0.102385, 0.984546, -0.0461373, 0.102385, 0.278436, 0.66025, 0.0582336, 1.4039, 0.638054, 0.102385, 0.278436, -0.0240108, 0.0582336, -0.00859904, 0.638054, 0.102385, 1.11686, 0.638054, -0.0521373, 0.123857, 0.66025, 0.102385, 1.11686, -0.0461373, -0.0521373, 1.4039, -0.00195351, 0.0582336, 0.123857, 0.66025, 0.0582336, 1.33767, -0.0240108)
+
+[node name="Door" instance=ExtResource("1_u2wj4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+key_name = "Th"
+locked_message = "The door is Locked"
+open_message = "The door is now open"
+locking_open_message = "Close it first!!!"
+on_lock_message = "You locked the door."
+wrong_item_message = "It won't open the door"
+affected_prop = "rotation_degrees"
+affected_axis = "y"
+max_offset = 90.0
+is_locked = true
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_2m521")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_nf2m2")

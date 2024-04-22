@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=4 format=3 uid="uid://cyb27pa15h3pn"]
+
+[ext_resource type="Script" path="res://inventory-interaction-system/Inventory/ItemResource.gd" id="1_3josw"]
+[ext_resource type="Resource" uid="uid://hhvvwej73ism" path="res://inventory-interaction-system/Interaction/Items/CraftSystem/Craftable/ItemABC.tres" id="1_5r5v8"]
+[ext_resource type="Texture2D" uid="uid://drc0sfrlrd8wb" path="res://inventory-interaction-system/Inventory/Images/C_LETTER.png" id="2_t4ukb"]
+
+[resource]
+script = ExtResource("1_3josw")
+item_name = "ItemC"
+texture = ExtResource("2_t4ukb")
+quantity = 1
+crafted_items = Array[Resource("res://inventory-interaction-system/Inventory/CraftItemResource.gd")]([ExtResource("1_5r5v8")])
+description = ""
