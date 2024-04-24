@@ -52,8 +52,8 @@ This `on_collect` function will be called just after the signal to add the item 
 1. Define a static function called use_item in your script:
 
 ```gdscript
-   static func use_item(): # Custom logic for using the power cell
-      Inventory.player.get_node("Head/Camcorder").try_to_recharge()
+static func use_item(): # Custom logic for using the power cell
+   Inventory.player.get_node("Head/Camcorder").try_to_recharge()
 ```
 
 Here is the full source code to create a collectible and usable power cell:
