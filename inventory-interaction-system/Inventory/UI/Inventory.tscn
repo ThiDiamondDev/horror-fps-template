@@ -256,6 +256,5 @@ libraries = {
 }
 speed_scale = 0.2
 
-[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/FlowContainer/MarginContainer/MarginContainer/VBoxContainer/UseItemButton" to="." method="_on_use_item_button_pressed"]
 [connection signal="pressed" from="MarginContainer/FlowContainer/MarginContainer/MarginContainer/VBoxContainer/DropItemContainer/DropItemButton" to="." method="_on_drop_item_button_pressed"]
