@@ -6,8 +6,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var JUMP_VELOCITY = 4.5
 
 @export var mouse_sensibility = 1200
-var mouse_relative_x = 0
-var mouse_relative_y = 0
 
 var min_camera_x = deg_to_rad(-90)
 var max_camera_x =  deg_to_rad(90)
@@ -37,7 +35,5 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseMotion and controller.can_move_camera:
 		rotation.y -= event.relative.x / mouse_sensibility
-		mouse_relative_x = clamp(event.relative.x, -50, 50)
-		mouse_relative_y = clamp(event.relative.y, -50, 10)
 		camera.rotation.x -= event.relative.y / mouse_sensibility
 		camera.rotation.x = clamp(camera.rotation.x,min_camera_x,max_camera_x)
