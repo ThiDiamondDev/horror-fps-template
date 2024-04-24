@@ -42,7 +42,7 @@ Welcome to the repository for the Inventory and Interaction System, a comprehens
 
 ```gdscript
 func on_collect(): # Custom logic for power cell collection
-Inventory.update_power_cells.emit()
+   Inventory.update_power_cells.emit()
 ```
 
 This `on_collect` function will be called just after the signal to add the item to the inventory be emitted and before the item be removed with `queue_free()`, so if you want to change this behavior you need to override the `interact(parameters=null)` function.
@@ -53,7 +53,7 @@ This `on_collect` function will be called just after the signal to add the item 
 
 ```gdscript
    static func use_item(): # Custom logic for using the power cell
-   Inventory.player.get_node("Head/Camcorder").try_to_recharge()
+      Inventory.player.get_node("Head/Camcorder").try_to_recharge()
 ```
 
 Here is the full source code to create a collectible and usable power cell:
