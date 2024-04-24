@@ -25,6 +25,7 @@ func _ready():
 	title_label.text = ""
 	description_label.text = ""
 	var slots_group = get_tree().get_nodes_in_group("slots")
+	toggle_use_item_button()
 	for index in slots_group.size():
 		var slot = slots_group[index]
 		slots.append(slot)
@@ -97,6 +98,7 @@ func select(slot):
 	description_label.text = slot.item.description
 	
 	selected_item_texture.texture = slot.item.texture
+	
 		
 func on_slot_pressed(slot):
 	if slot.empty:
@@ -124,9 +126,11 @@ func clear_craft_items():
 func toggle_use_item_button():
 	if not selected_slot or selected_slot.item.quantity <=0:
 		use_item_button.disabled = true
-	
 	else:
-		use_item_button.disabled = false
+		if selected_slot.item.use_item_function:
+			use_item_button.disabled = false
+		else:
+			use_item_button.disabled = true
 	
 
 
