@@ -10,12 +10,12 @@ config_version=5
 
 [application]
 
-run/main_scene="res://inventory-interaction-system/levels/main_level.tscn"
+run/main_scene="res://levels/main_level.tscn"
 config/features=PackedStringArray("4.2")
 
 [autoload]
 
-Inventory="*res://inventory-interaction-system/Inventory/InventorySingleton.gd"
+Inventory="*res://Inventory/InventorySingleton.gd"
 
 [input]
 

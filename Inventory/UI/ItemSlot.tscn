@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://blcujmmdc66wb"]
+
+[ext_resource type="Script" path="res://Inventory/UI/ItemSlot.gd" id="1_7ooea"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfi42"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="InventorySlot" type="ColorRect" groups=["slots"]]
+custom_minimum_size = Vector2(80, 80)
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_7ooea")
+
+[node name="Slot" type="TextureButton" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="QuantityLabel" type="Label" parent="Slot"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -18.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xfi42")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="Slot" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Slot" to="." method="_on_mouse_exited"]

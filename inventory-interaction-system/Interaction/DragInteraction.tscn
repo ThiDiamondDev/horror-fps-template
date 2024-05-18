@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://8w3abm5qyqxl"]
-
-[ext_resource type="Script" path="res://inventory-interaction-system/Interaction/DragInteraction.gd" id="1_i1rod"]
-
-[node name="DragInteraction" type="StaticBody3D"]
-collision_layer = 8
-script = ExtResource("1_i1rod")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]

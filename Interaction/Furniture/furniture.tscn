@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://drhgphis4p5f4"]
+
+[ext_resource type="PackedScene" uid="uid://cmtws68tf4wih" path="res://Interaction/Furniture/Furniture.glb" id="1_vwu3g"]
+[ext_resource type="PackedScene" uid="uid://lv5ah8lvreft" path="res://Interaction/Furniture/Drawer.tscn" id="2_818bh"]
+
+[node name="Furniture2" instance=ExtResource("1_vwu3g")]
+
+[node name="DragInteraction" parent="." index="1" instance=ExtResource("2_818bh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.137015, 0.129145, -0.101969)
+
+[node name="DragInteraction2" parent="." index="2" instance=ExtResource("2_818bh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.137015, 0.602293, -0.101969)
+is_locked = false
+
+[node name="DragInteraction3" parent="." index="3" instance=ExtResource("2_818bh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.137015, 1.0734, -0.101969)
+is_locked = false
