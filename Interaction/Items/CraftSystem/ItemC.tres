@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=11 format=3 uid="uid://d3fxd6yakgssl"]
+
+[ext_resource type="Script" path="res://Inventory/ItemResource.gd" id="1_3josw"]
+[ext_resource type="Texture2D" uid="uid://cojbb4egfcic8" path="res://Inventory/Images/B_LETTER.png" id="2_f2ix4"]
+[ext_resource type="Texture2D" uid="uid://drc0sfrlrd8wb" path="res://Inventory/Images/C_LETTER.png" id="2_t4ukb"]
+[ext_resource type="Script" path="res://Inventory/CraftItemResource.gd" id="3_jiyec"]
+[ext_resource type="Texture2D" uid="uid://bs5aomv6nuciu" path="res://Inventory/Images/AB.png" id="4_unqq0"]
+[ext_resource type="Resource" uid="uid://hhvvwej73ism" path="res://Interaction/Items/CraftSystem/Craftable/ItemABC.tres" id="5_b4ueq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ika48"]
+load_path = "res://.godot/imported/A_LETTER.png-7f5e088c7deb1b5380da8f5f03c9de5e.ctex"
+
+[sub_resource type="Resource" id="Resource_lt782"]
+script = ExtResource("1_3josw")
+item_name = "ItemA"
+texture = SubResource("CompressedTexture2D_ika48")
+quantity = 1
+crafted_items = Array[ExtResource("3_jiyec")]([])
+description = ""
+
+[sub_resource type="Resource" id="Resource_v01go"]
+script = ExtResource("1_3josw")
+item_name = "ItemB"
+texture = ExtResource("2_f2ix4")
+quantity = 1
+crafted_items = Array[ExtResource("3_jiyec")]([])
+description = ""
+
+[sub_resource type="Resource" id="Resource_emw6j"]
+script = ExtResource("3_jiyec")
+itemsNeeded = Array[ExtResource("1_3josw")]([SubResource("Resource_lt782"), SubResource("Resource_v01go")])
+item_name = "ItemAB"
+texture = ExtResource("4_unqq0")
+quantity = 1
+crafted_items = Array[ExtResource("3_jiyec")]([])
+description = ""
+
+[resource]
+script = ExtResource("1_3josw")
+item_name = "Item C"
+texture = ExtResource("2_t4ukb")
+quantity = 1
+crafted_items = Array[ExtResource("3_jiyec")]([SubResource("Resource_emw6j"), ExtResource("5_b4ueq")])
+description = ""

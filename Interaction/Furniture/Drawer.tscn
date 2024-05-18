@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://lv5ah8lvreft"]
+
+[ext_resource type="PackedScene" uid="uid://8w3abm5qyqxl" path="res://Interaction/DragInteraction.tscn" id="1_6hugy"]
+[ext_resource type="ArrayMesh" uid="uid://b4swb2d451j5k" path="res://Interaction/Furniture/drawer.res" id="2_obc2w"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7ytsq"]
+points = PackedVector3Array(-0.199618, -0.0851, -0.340952, 0.204671, 0.0851, 0.339848, -0.199618, -0.0851, 0.340952, -0.198927, 0.0851, -0.339848, 0.205292, -0.0851, -0.340952, 0.204671, 0.0851, -0.339848, -0.198927, 0.0851, 0.339848, 0.205292, -0.0851, 0.340952, 0.240821, -0.0225698, -0.227221, 0.240821, -0.0225698, 0.227221)
+
+[node name="DragInteraction" instance=ExtResource("1_6hugy")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+weight = 0.01
+max_offset = 0.5
+max_offset_locked = 0.1
+is_locked = true
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_obc2w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_7ytsq")

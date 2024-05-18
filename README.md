@@ -59,7 +59,7 @@ static func use_item(): # Custom logic for using the power cell
 Here is the full source code to create a collectible and usable power cell:
 
 ```gdscript
-extends "res://inventory-interaction-system/Interaction/Items/CollectibleItem.gd"
+extends "res://Interaction/Items/CollectibleItem.gd"
 
 func on_collect():
     #Updates the power cells quantity label in the camcorder
