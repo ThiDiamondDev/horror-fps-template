@@ -26,18 +26,19 @@ signal interaction_end
 
 var player: Player
 
-var min_value
-var max_value
+var min_value: float
+var max_value: float
 var max_value_locked
+var min_value_locked
 
 func _ready():
 	set_process_input(false)
 	set_process(false)
 	var property = get_affected_property()
-	min_value = property - min_offset
+	min_value = property + min_offset
 	max_value = property + max_offset
 	max_value_locked = property + max_offset_locked
-	
+	min_value_locked = min_value
 func is_in_closed_range():
 	var property = get_affected_property()
 	return property >= min_value and property <= max_value_locked
@@ -58,6 +59,12 @@ func get_affected_property():
 
 func set_affected_property(value: float):
 	self[affected_prop][affected_axis] = value
+
+func get_min_value():
+	if is_locked:
+		return min_value_locked
+	else:
+		return min_value	
 
 func get_max_value():
 	if is_locked:
@@ -97,26 +104,14 @@ func interact(parameters=null):
 func move_object(mouse_movement: Vector2):
 	var property = get_affected_property()
 	var direction = 1
-	if not is_player_in_front():
+	if not is_player_in_front(player,self):
 		direction = -1
 	
 	var movement = property + (mouse_movement[mouse_axis] * weight) * direction
-	if movement >= min_value and movement <= get_max_value():
+	if movement >= get_min_value() and movement <= get_max_value():
 		set_affected_property(movement)
-
-func is_player_in_front() -> bool:
-	var player_position = player.position
-	var player_forward_vector: Vector3 = player.global_transform.basis.x
-	var player_to_door: Vector3 = position - player_position
-
-	# Normalize the player-to-door vector
-	var player_to_door_normalized: Vector3 = player_to_door.normalized()
 	
-	# Calculate the dot product between player-to-door and player forward vector
-	var dot_product: float = player_to_door_normalized.dot(player_forward_vector)
 
-	# If dot product is positive, player is in front of the door
-	return dot_product > 0
 
 func _input(event):
 	if event.is_action_released("Interact"):

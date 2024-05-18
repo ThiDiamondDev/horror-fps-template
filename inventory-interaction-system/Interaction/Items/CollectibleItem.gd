@@ -1,4 +1,4 @@
-extends "res://inventory-interaction-system/Interaction/InteractionBase.gd"
+extends InteractionBase
 
 class_name CollectibleItem
 

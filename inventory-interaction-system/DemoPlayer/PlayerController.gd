@@ -30,9 +30,6 @@ func _process(_delta):
 			interaction_label.visible = false
 			
 func _input(event):
-	
-	
-		
 	if event.is_action_pressed("Interact") and ray_cast.is_colliding():
 		var object = ray_cast.get_collider()
 		
@@ -43,7 +40,7 @@ func _input(event):
 				object.interaction_end.connect(enable_camera_movement,CONNECT_ONE_SHOT)
 				object.interact(self)
 			else:
-				object.interact()
+				object.interact(self)
 
 	if event.is_action_pressed("ToggleInventory"):
 		if not inventory.container.visible:

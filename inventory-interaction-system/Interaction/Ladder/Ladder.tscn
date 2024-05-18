@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxscyy3vgif0i"]
+
+[ext_resource type="Script" path="res://inventory-interaction-system/Interaction/Ladder/Ladder.gd" id="1_wcp63"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_83jxp"]
+size = Vector3(0.64, 5, 0.175)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g82kr"]
+points = PackedVector3Array(0.354603, 2.53869, 0.110913, -0.359683, -2.53869, -0.127183, -0.359683, -2.53869, 0.110913, -0.359683, 2.53869, -0.127183, 0.354603, -2.53869, -0.127183, 0.354603, -2.53869, 0.110913, -0.359683, 2.53869, 0.110913, 0.354603, 2.53869, -0.127183)
+
+[node name="Ladder" type="StaticBody3D"]
+collision_layer = 8
+script = ExtResource("1_wcp63")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20624, 0)
+mesh = SubResource("BoxMesh_83jxp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20624, 0)
+shape = SubResource("ConvexPolygonShape3D_g82kr")
+
+[node name="PlayerPositionReference" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 1.73364)
