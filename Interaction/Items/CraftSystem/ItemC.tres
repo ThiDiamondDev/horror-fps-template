@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://hhvvwej73ism" path="res://Interaction/Items/CraftSystem/Craftable/ItemABC.tres" id="5_b4ueq"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ika48"]
-load_path = "res://.godot/imported/A_LETTER.png-7f5e088c7deb1b5380da8f5f03c9de5e.ctex"
 
 [sub_resource type="Resource" id="Resource_lt782"]
 script = ExtResource("1_3josw")

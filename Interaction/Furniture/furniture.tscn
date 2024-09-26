@@ -7,6 +7,11 @@
 
 [node name="DragInteraction" parent="." index="1" instance=ExtResource("2_818bh")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.137015, 0.129145, -0.101969)
+key_name = "Key1"
+locked_message = "Locked"
+open_message = "Open"
+locking_open_message = "Locking"
+on_lock_message = "Locked"
 
 [node name="DragInteraction2" parent="." index="2" instance=ExtResource("2_818bh")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.137015, 0.602293, -0.101969)

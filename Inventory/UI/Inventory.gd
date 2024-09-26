@@ -169,4 +169,3 @@ func display_interaction_info(info):
 	else:
 		interaction_info.text = info
 		interaction_anim_player.play("Interaction Info")
-
