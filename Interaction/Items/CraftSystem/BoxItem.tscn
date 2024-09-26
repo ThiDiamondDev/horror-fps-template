@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf6kwdtk20wvb"]
+[gd_scene load_steps=5 format=3 uid="uid://cf6kwdtk20wvb"]
 
 [ext_resource type="PackedScene" uid="uid://igad63lnj4n5" path="res://Interaction/Items/CollectibleItem.tscn" id="1_c04rf"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pgvqe"]
+albedo_color = Color(0.0755101, 0.0755101, 0.0755101, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_401c8"]
+material = SubResource("StandardMaterial3D_pgvqe")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1xk0e"]
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)

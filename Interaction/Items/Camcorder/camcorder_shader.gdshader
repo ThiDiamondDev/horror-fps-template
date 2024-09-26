@@ -20,7 +20,7 @@ vec3 get_noise_texture(vec4 screen, vec2 uv) {
 }
 
 void vertex() {
-	POSITION = vec4(VERTEX, 1);
+	POSITION = vec4(VERTEX.xy, 1.0,1.0);
 }
 
 void fragment() {
