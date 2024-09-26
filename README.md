@@ -1,5 +1,8 @@
 # Godot Horror Game Inventory and Interaction System
 
+- **Godot version:** 4.3
+- Make sure you have `.blender` importing enabled and working in Godot.
+
 ## Overview
 
 Welcome to the repository for the Inventory and Interaction System, a comprehensive solution designed for horror games developed in Godot. This system allows players to collect items, interact with the environment, and craft new items, enhancing the immersive experience of your game.
