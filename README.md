@@ -19,7 +19,6 @@ Welcome to the repository for the Inventory and Interaction System, a comprehens
 
 1. Clone the repository or download the project from the GitHub page.
 2. Open the project in Godot.
-3. (Optional) Follow the integration instructions provided in the video tutorial to add the system to your game.
 
 ## Adding New Items and Crafting Recipes
 
